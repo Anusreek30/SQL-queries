@@ -1,0 +1,10 @@
+show databases;
+use works;
+create table Book(Booksid int primary key ,Title varchar(30),Author varchar(30) ,PublicationYear int ,Genre varchar(30));
+insert into works.Book(Booksid,Title,Author,PublicationYear,Genre)values(1,"The Great Gatsby","F.Scott Fitzgerald",1925,"Fiction");
+insert into works.Book(Booksid,Title,Author,PublicationYear,Genre)values(2,"To kill a Mockingbird","Harper Lee",1960,"Fiction");
+insert into works.Book(Booksid,Title,Author,PublicationYear,Genre)values(3,"1984","George Orwell",1949,"Dystopian");
+select*from Book;
+select Author,Title from Book where Booksid=3;
+update Book set Genre="Classic Fiction" where Booksid=1;
+delete from Book where PublicationYear < 1950 and Booksid in (1,3);
